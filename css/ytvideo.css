@@ -1,0 +1,313 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.eot?9jale4");
+  src: url("../fonts/icons.eot?#iefix9jale4") format("embedded-opentype"), url("../fonts/icons.woff?9jale4") format("woff"), url("../fonts/icons.ttf?9jale4") format("truetype"), url("../fonts/icons.svg?9jale4#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#video_wrapper .overlay {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.first:before {
+  content: "\e600";
+}
+
+.last:before {
+  content: "\e601";
+}
+
+.mute:before {
+  content: "\e602";
+}
+
+.next:before {
+  content: "\e603";
+}
+
+.pause:before {
+  content: "\e604";
+}
+
+.play:before {
+  content: "\e605";
+}
+
+.prev:before {
+  content: "\e606";
+}
+
+.on:before {
+  content: "\e607";
+}
+
+/* ===============================
+style
+=============================== */
+html,
+body {
+  overflow: hidden;
+  font-family: 'Lato', Arial, Verdana, sans-serif;
+}
+html a,
+body a {
+  color: white;
+  text-decoration: none;
+}
+
+#video_wrapper {
+  position: relative;
+  z-index: 1;
+}
+#video_wrapper #player {
+  z-index: 1;
+}
+#video_wrapper .overlay {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  z-index: 5;
+}
+#video_wrapper .overlay li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition: opacity ease;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition: opacity ease 0.5s;
+  -o-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+  width: 34px;
+  height: 34px;
+  margin: 0 5px;
+  padding: 10px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+#video_wrapper .overlay li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+#video_wrapper .overlay li.player {
+  display: none;
+  font-size: 11px;
+}
+#video_wrapper .overlay li.pos {
+  padding: 8px;
+  font-size: 14px;
+}
+#video_wrapper .overlay li.sound {
+  display: none;
+  font-size: 9px;
+  padding: 11px 6px;
+}
+#video_wrapper #controls {
+  bottom: 40px;
+  left: 50%;
+  margin-left: -20%;
+  width: 40%;
+  text-align: center;
+  z-index: 6;
+}
+#video_wrapper #poscontrols {
+  overflow: hidden;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -35%;
+  width: 70%;
+}
+#video_wrapper #poscontrols li {
+  margin: 0;
+}
+#video_wrapper #poscontrols li.first {
+  float: left;
+}
+#video_wrapper #poscontrols li.last {
+  float: right;
+}
+#video_wrapper #volume {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  right: 40px;
+  bottom: 40px;
+}
+#video_wrapper #seek {
+  left: 50%;
+  bottom: 95px;
+  margin-left: -35%;
+  padding-top: 7px;
+  width: 70%;
+  height: 16px;
+}
+#video_wrapper #seek .bar {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#video_wrapper #seek span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+}
+#video_wrapper #seek span.loaded {
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+#video_wrapper #seek span.current {
+  width: 0;
+  background-color: white;
+  z-index: 2;
+}
+#video_wrapper #seek span.draggable {
+  top: -7px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+}
+#video_wrapper #seek span.draggable:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+#video_wrapper #endevent {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 15;
+}
+#video_wrapper #endevent a {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition: all ease;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -100px;
+  width: 200px;
+  height: 40px;
+  border: 2px solid white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+#video_wrapper #endevent a:hover {
+  color: #000;
+  background-color: white;
+}
