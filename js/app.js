@@ -24,7 +24,6 @@ angular.module('ngrepeatSelect', [])
           url: path,
           method: "POST",
       }).success(function(data, status, headers, config) {
-          // var a = JSON.parse(data);
           angular.element("#result").children().remove();
           var promotionList = data[0]["promotionList"];
           var array = new Array();

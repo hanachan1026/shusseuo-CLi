@@ -72,6 +72,11 @@ li {
   left: 60%;
 }
 
+button.btn-primary {
+  position: absolute;
+  top: 90%;
+}
+
 li.result {
   display: inline-block;
   background: white;
@@ -79,4 +84,25 @@ li.result {
   margin: .3em 1em;
   padding: 5px 1em;
   border-radius: 5px;
+  /*animation-duration: .3s;
+  animation-name: slidein;*/
+}
+
+ul.place-list>li {
+  text-align: center;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+    color: blue;
+    background-color: #aaccff;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+    color: black;
+    background-color: white;
+  }
 }
