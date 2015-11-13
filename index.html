@@ -4,200 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>apiClientPage</title>
-
+    <title>apiCli</title>
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <!-- jQuery -->
-    <script>
-        // $(function(){
-        //     $("button#search").click(function(){
-        //         var path = "http://homestead.app:8000/api/v1/place/" + $("[name = 'place']").val();
-        //         $.post(path,{},function(data){
-        //             var a = JSON.parse(data);
-        //             var text = "";
-
-        //             a[0]["promotionList"].forEach(function(b){
-        //                 text += b + "<br>";
-
-        //             });
-        //             $("div#result").html(text);
-        //             $("div#result")
-        //                     .css("color", "white")
-        //                     .css("text-shadow", "1px 1px black");
-
-        //         });
-        //     });
-        // });
-    </script>
-
-     <script src="js/swfobject.js"></script>
-     <script src="js/youtube_video.js"></script>
-    <script>
-        $(function(){
-            $('#player').customvideo({
-                youtubeId : 'il9nqWw9W3Y',
-                width : 1280,
-                height : 720,
-                fullsize : true
-            });
-        });
-    </script>
-
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/ytvideo.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
-    <style>
-        .btn-xxl {
-            padding: 150px 195px;
-            font-size: 50px;
-            border-radius: 40px;
-        }
-
-        #background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            width: auto;
-            min-width: 100%;
-            height: auto;
-            min-height: 100%;
-            z-index: -1;
-        }
-
-        #background-front {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            width: auto;
-            min-width: 100%;
-            height: auto;
-            min-height: 100%;
-            z-index: -1;
-            background-color: black;
-            opacity: 0.3;
-
-        }
-
-        h1 {
-            color: white;
-            margin-top: 140px;
-            font-size: 8em;
-            text-shadow: 1px 1px black;
-        }
-        @media screen and (max-width: 600px) {
-            h1 {
-                color: white;
-                margin-top: 140px;
-                font-size: 4em;
-                text-shadow: 1px 1px black;
-            }
-        }
-        @media screen and (min-width: 601px) and (max-width: 991px) {
-            small {
-                margin-top: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    <script src="js/youtube.js"></script>
 
-        // プレーヤーを埋め込む場所指定
-        var ytArea = 'background';
-        // 埋め込むYouTube ID指定
-        var ytID = 'c0gLVkKU5lE';
-
-        // プレーヤーの埋め込み
-        function onYouTubeIframeAPIReady() {
-            ytPlayer = new YT.Player(ytArea, {
-                videoId: ytID,
-                playerVars: {
-                    rel: 0,
-                    controls: 0,
-                    showinfo: 0,
-                    wmode: 'transparent',
-                    vq: 'hd1080',
-                    autohide: 1
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        // YouTubeの準備完了後
-        function onPlayerReady(e) {
-            ytPlayer.playVideo();
-            ytPlayer.mute();
-        }
-
-        // 再生完了後
-        function onPlayerStateChange(e) {
-            var ytStatus = e.target.getPlayerState();
-            if (ytStatus == YT.PlayerState.ENDED) {
-                ytPlayer.playVideo();
-                ytPlayer.mute();
-            }
-        }
-    </script>
     <div class="container">
-        <h1>Shusseuo API</h1>
+        <h1 id="title">Shusseuo API</h1>
         <span id="helpBlock" class="help-block" style="color: white; text-shadow: 1px 1px black;">地域を選択してください。</span>
         <div ng-controller="ExampleController">
             <div class="input-group" style="width: 50%;">
-                <span class="input-group-btn">
+                <!-- <span class="input-group-btn">
                     <button id="search" class="btn btn-default">
                         <i class='glyphicon glyphicon-search'></i>
                     </button>
-                </span>
+                </span> -->
                 <select name="repeatSelect" id="repeatSelect" ng-model="data.selected" ng-change="change()" class="form-control">
                   <option ng-repeat="option in data.availableOptions" value="{{option.value}}">{{option.name}}</option>
                 </select>
             </div>
-              <div id="result" style="color: white; white-space: pre-line">
-                {{result}}
+              <div id="result" style="color: white;">
+
               </div>
         </div>
-        <small style="float: right; color: white; margin-top: 300px;">ゴマサバ・ヒラサバを捌く　2 by 南紀和歌山釣太郎</small>
-        <!--Call your modal-->
-        <a id="demo01" href="#animatedModal">APIの仕様</a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">APIの仕様を見る</button>
 
-        <!--DEMO01-->
-        <div id="animatedModal">
-            <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-          <div class="close-animatedModal">
-              CLOSE MODAL
-          </div>
-
-          <div class="modal-content">
-                <!--Your modal content goes here-->
-            <div class="container">
-                <div style="width: 60%">
-                    <p style="font-size: 6em">shusseuo API 仕様</p>
-                    <p>POSTメソッドで<br>https://shusse-uo.herokuapp.com/api/v1/place/(地域名)<br>にアクセスしていただくと、その地域のブリの成長過程がjsonデータで返されます。</p>
-                </div>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <p id="modal-title">Shusseuo APIの仕様</p>
+              <p>POSTメソッドで<br><span style="color: red">https://shusse-uo.herokuapp.com/api/v1/(地域名)</span><br>にアクセスすると、<br>その地域の出世魚の成長過程の名前がjsonデータで返されます。</p>
+              <p id="place-list-title">地域名一覧</p>
+              <ul class="place-list">
+                  <li>hokuriku (北陸)</li>
+                  <li>kansai (関西)</li>
+                  <li>kanto (関東)</li>
+                  <li>kishu (紀州)</li>
+                  <li>kyushu (九州)</li>
+                  <li>sanin (山陰)</li>
+                  <li>shikoku (四国)</li>
+                  <li>shimokita (下北)</li>
+                  <li>tango (丹後)</li>
+                  <li>tohoku (東北)</li>
+                  <li>toyama (富山)</li>
+              </ul>
             </div>
-
           </div>
         </div>
     </div>
 
     <div id="background"></div>
-    <div id="background-front"></div>
+    <div id="background-front">
+        <small id="youtube-title">Mapping the deep ocean: Geoscience Australia and the search for MH370</small>
+    </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="js/animatedModal.min.js"></script>
-      <script>
-        $("#demo01").animatedModal();
-      </script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
