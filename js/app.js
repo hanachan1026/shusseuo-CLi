@@ -29,10 +29,10 @@ angular.module('ngrepeatSelect', [])
           var array = new Array();
           $.each(promotionList, function(index){
             if (this =="ブリ") {
-              var li = "<li class='result' style='color: red'>" + this + "</li>";
+              var li = "<li class='result stylie" + index + "' style='color: red'>" + this + "</li>";
               array.push(li);
             }else {
-              var li = "<li class='result'>" + this + "</li>";
+              var li = "<li class='result stylie" + index + "'>" + this + "</li>";
               array.push(li);
             };
             return array;
