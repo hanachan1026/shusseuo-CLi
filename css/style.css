@@ -32,6 +32,7 @@ li {
     margin-top: 140px;
     font-size: 8em;
     text-shadow: 1px 1px black;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
 }
 @media screen and (max-width: 600px) {
     #title {
@@ -39,20 +40,24 @@ li {
         margin-top: 140px;
         font-size: 4em;
         text-shadow: 1px 1px black;
+        font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
     }
 }
 
 #modal-title {
   font-size: 6em;
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
 }
 @media screen and (max-width: 464px) {
   #modal-title {
     font-size: 4em;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
   }
 }
 @media screen and (max-width: 317px) {
   #modal-title {
     font-size: 3em;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
   }
 }
 

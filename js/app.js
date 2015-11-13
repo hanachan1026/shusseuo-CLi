@@ -40,6 +40,16 @@ angular.module('ngrepeatSelect', [])
           $.each(array, function(index){
             angular.element("#result").append(this);
           });
+          angular.element(".result").hide();
+
+          for (var i = 0; i <= array.length - 1; i++) {
+            var stylies = ".stylie" + i;
+            console.log(stylies);
+            angular.element(stylies).delay(i * 1000).queue(function(next) {
+              $(this).show();
+              next();
+            });
+          };
       }).error(function(data, status, headers, config) {
           $scope.status = status;
       });
