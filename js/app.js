@@ -24,15 +24,36 @@ angular.module('ngrepeatSelect', [])
           url: path,
           method: "POST",
       }).success(function(data, status, headers, config) {
-          // var a = JSON.parse(data);
-          var text = "";
-          data[0]["promotionList"].forEach(function(b){
-            text += b + '\n';
+          angular.element("#result").children().remove();
+          var promotionList = data[0]["promotionList"];
+          var array = new Array();
+          $.each(promotionList, function(index){
+            if (this =="ブリ") {
+              var li = "<li class='result stylie" + index + "' style='color: red'>" + this + "</li>";
+              array.push(li);
+            }else {
+              var li = "<li class='result stylie" + index + "'>" + this + "</li>";
+              array.push(li);
+            };
+            return array;
           });
-          $scope.result = text;
-          console.log($scope.result);
+          $.each(array, function(index){
+            angular.element("#result").append(this);
+          });
+          angular.element(".result").hide();
+
+          for (var i = 0; i <= array.length - 1; i++) {
+            var stylies = ".stylie" + i;
+            console.log(stylies);
+            angular.element(stylies).delay(i * 1000).queue(function(next) {
+              $(this).show();
+              next();
+            });
+          };
       }).error(function(data, status, headers, config) {
           $scope.status = status;
       });
    };
 }]);
+
+
