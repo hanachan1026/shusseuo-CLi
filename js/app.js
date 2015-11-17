@@ -44,11 +44,18 @@ angular.module('ngrepeatSelect', [])
 
           for (var i = 0; i <= array.length - 1; i++) {
             var stylies = ".stylie" + i;
+            var j = i + 1;
+            var scale = "scale(" + j +")";
             console.log(stylies);
             angular.element(stylies).delay(i * 1000).queue(function(next) {
-              $(this).show();
+
+              $(this).show(1,hoge());
               next();
             });
+
+            function hoge() {
+              $(this).animate({top: "200px"}, 1000);
+            };
           };
       }).error(function(data, status, headers, config) {
           $scope.status = status;

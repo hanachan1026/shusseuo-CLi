@@ -2,6 +2,50 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+.btn-group.top-right {
+  top: 4%;
+  left: 50%;
+  margin: 1em;
+}
+
+@media screen and (max-width: 1165px) {
+  .btn-group.top-right {
+    top: 2%;
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .btn-group.top-right {
+    top: 2%;
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .btn-group.top-right {
+    top: 2%;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .btn-group.top-right {
+    top: 2%;
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .btn-group.top-right {
+    top: 80%;
+    left: 5%;
+  }
+}
+
 #background {
     position: fixed;
     right: 0;
@@ -27,13 +71,41 @@ li {
 
 }
 
-#title {
+.title h1{
+    display: inline-block;
     color: white;
-    margin-top: 140px;
     font-size: 8em;
     text-shadow: 1px 1px black;
     font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
 }
+@media screen and (max-width: 560px) {
+  .title h1{
+      display: inline-block;
+      color: white;
+      font-size: 6em;
+      text-shadow: 1px 1px black;
+      font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .title h1{
+      display: inline-block;
+      color: white;
+      font-size: 4em;
+      text-shadow: 1px 1px black;
+      font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  }
+}
+
+.title h2 {
+  display: inline-block;
+  color: white;
+  font-size: 4em;
+  text-shadow: 1px 1px black;
+  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
 @media screen and (max-width: 600px) {
     #title {
         color: white;
@@ -68,14 +140,26 @@ li {
 #youtube-title {
   color: white;
   position: absolute;
-  top: 90%;
-  left: 60%;
+  top: 95%;
+  left: 70%;
+  font-size: medium;
+  background: blue;
+  border-radius: 5px;
 }
 
-button.btn-primary {
+@media screen and (max-width: 458px) {
+  #youtube-title {
+    color: white;
   position: absolute;
   top: 90%;
+  left: 60%;
+  font-size: small;
+  background: blue;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px;
+  }
 }
+
 
 li.result {
   display: inline-block;
@@ -85,8 +169,11 @@ li.result {
   padding: 30px 3em;
   border-radius: 50%;
   text-shadow: 1px 1px 1px;
-  /*animation-duration: .3s;
-  animation-name: slidein;*/
+  animation: vertical 1s ease-in-out infinate alternate;
+}
+
+.modal-content {
+  padding: 1em;
 }
 
 @media screen and (max-width: 345px) {
@@ -100,7 +187,6 @@ li.result {
     text-shadow: 1px 1px 1px;
   }
 }
-
 
 ul.place-list>li {
   text-align: center;

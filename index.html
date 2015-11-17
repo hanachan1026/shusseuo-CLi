@@ -7,6 +7,9 @@
     <title>apiCli</title>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="js/jqfloat.js"></script>
+
     <!-- angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="js/app.js"></script>
@@ -16,9 +19,24 @@
 </head>
 <body>
     <script src="js/youtube.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="title">
+            <h1>Shusseuo</h1>
+            <h2>API</h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="btn-group top-right">
+            <button type="button" class="btn btn-primary open-modal" data-toggle="modal" data-target=".bs-example-modal-lg">APIの仕様を見る</button>
+            <a class="github-link btn btn-info" href="https://github.com/hanachan1026/shusseuo-CLi/tree/master" target="_blank">See on Github</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
-        <h1 id="title">Shusseuo API</h1>
         <span id="helpBlock" class="help-block" style="color: white; text-shadow: 1px 1px black;">地域を選択してください。</span>
         <div ng-controller="ExampleController">
             <div class="input-group" style="width: 50%;">
@@ -35,7 +53,6 @@
 
               </div>
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">APIの仕様を見る</button>
 
         <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
           <div class="modal-dialog modal-lg">
@@ -63,7 +80,7 @@
 
     <div id="background"></div>
     <div id="background-front">
-        <small id="youtube-title">Mapping the deep ocean: Geoscience Australia and the search for MH370</small>
+        <small id="youtube-title">ゴマサバ・ヒラサバを捌く 2</small>
     </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
