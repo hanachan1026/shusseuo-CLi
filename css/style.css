@@ -91,7 +91,7 @@ li.result {
     background: white;
     color: black;
     margin: 1em 1em;
-    padding: 30px 3em;
+    padding: 60px 6em;
     border-radius: 50%;
     text-shadow: 1px 1px 1px;
     animation: vertical 1s ease-in-out infinate alternate;
@@ -99,18 +99,6 @@ li.result {
 
 .modal-content {
     padding: 1em;
-}
-
-@media screen and (max-width: 345px) {
-    li.result {
-        display: inline-block;
-        background: white;
-        color: black;
-        margin: 0.3em 1em;
-        padding: 10px 2em;
-        border-radius: 50%;
-        text-shadow: 1px 1px 1px;
-    }
 }
 
 ul.place-list>li {
