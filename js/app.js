@@ -49,13 +49,16 @@ angular.module('ngrepeatSelect', [])
             console.log(stylies);
             angular.element(stylies).delay(i * 1000).queue(function(next) {
 
-              $(this).show(1,hoge());
+              $(this).show();
+              $(this).jqFloat({
+                width:0,
+                height: 20,
+                speed: 1500
+               });
+              $(this).parent().css("display", "inline-block")
+
               next();
             });
-
-            function hoge() {
-              $(this).animate({top: "200px"}, 1000);
-            };
           };
       }).error(function(data, status, headers, config) {
           $scope.status = status;
