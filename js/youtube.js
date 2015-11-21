@@ -6,7 +6,7 @@ var tag = document.createElement('script');
         // プレーヤーを埋め込む場所指定
         var ytArea = 'background';
         // 埋め込むYouTube ID指定
-        var ytID = 'WLBQ-rAb-24';
+        var ytID = 'c0gLVkKU5lE';
 
         // プレーヤーの埋め込み
         function onYouTubeIframeAPIReady() {

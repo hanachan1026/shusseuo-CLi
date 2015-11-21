@@ -1,5 +1,9 @@
 li {
-  list-style-type: none;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 #background {
@@ -24,100 +28,91 @@ li {
     z-index: -1;
     background-color: black;
     opacity: 0.3;
-
 }
 
-#title {
-    color: white;
-    margin-top: 140px;
-    font-size: 8em;
-    text-shadow: 1px 1px black;
-    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
-}
 @media screen and (max-width: 600px) {
     #title {
         color: white;
         margin-top: 140px;
         font-size: 4em;
         text-shadow: 1px 1px black;
-        font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+        font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
     }
 }
 
 #modal-title {
-  font-size: 6em;
-  font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+    font-size: 6em;
+    font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
 }
+
 @media screen and (max-width: 464px) {
-  #modal-title {
-    font-size: 4em;
-    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
-  }
+    #modal-title {
+        font-size: 4em;
+        font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+    }
 }
+
 @media screen and (max-width: 317px) {
-  #modal-title {
-    font-size: 3em;
-    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
-  }
+    #modal-title {
+        font-size: 3em;
+        font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+    }
 }
 
 #place-list-title {
-  font-size: 3em;
+    font-size: 3em;
 }
 
 #youtube-title {
-  color: white;
-  position: absolute;
-  top: 90%;
-  left: 60%;
+    color: white;
+    position: absolute;
+    top: 95%;
+    left: 70%;
+    font-size: medium;
+    background: blue;
+    border-radius: 5px;
 }
 
-button.btn-primary {
-  position: absolute;
-  top: 90%;
+@media screen and (max-width: 458px) {
+    #youtube-title {
+        color: white;
+        position: absolute;
+        top: 90%;
+        left: 60%;
+        font-size: small;
+        background: blue;
+        border-radius: 5px;
+        text-shadow: 1px 1px 1px;
+    }
 }
 
 li.result {
-  display: inline-block;
-  background: white;
-  color: black;
-  margin: 1em 1em;
-  padding: 30px 3em;
-  border-radius: 50%;
-  text-shadow: 1px 1px 1px;
-  /*animation-duration: .3s;
-  animation-name: slidein;*/
-}
-
-@media screen and (max-width: 345px) {
-  li.result {
     display: inline-block;
     background: white;
     color: black;
-    margin: 0.3em 1em;
-    padding: 10px 2em;
+    margin: 1em 1em;
+    padding: 30px 3em;
     border-radius: 50%;
     text-shadow: 1px 1px 1px;
-  }
+    animation: vertical 1s ease-in-out infinate alternate;
 }
 
+.modal-content {
+    padding: 1em;
+}
+
+@media screen and (max-width: 345px) {
+    li.result {
+        display: inline-block;
+        background: white;
+        color: black;
+        margin: 0.3em 1em;
+        padding: 10px 2em;
+        border-radius: 50%;
+        text-shadow: 1px 1px 1px;
+    }
+}
 
 ul.place-list>li {
-  text-align: center;
+    text-align: center;
 }
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-    color: blue;
-    background-color: #aaccff;
-  }
-  to {
-    margin-left: 0%;
-    width: 100%;
-    color: black;
-    background-color: white;
-  }
-}
-

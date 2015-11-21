@@ -44,9 +44,19 @@ angular.module('ngrepeatSelect', [])
 
           for (var i = 0; i <= array.length - 1; i++) {
             var stylies = ".stylie" + i;
+            var j = i + 1;
+            var scale = "scale(" + j +")";
             console.log(stylies);
             angular.element(stylies).delay(i * 1000).queue(function(next) {
+
               $(this).show();
+              $(this).jqFloat({
+                width:0,
+                height: 20,
+                speed: 1500
+               });
+              $(this).parent().css("display", "inline-block")
+
               next();
             });
           };
