@@ -63,29 +63,6 @@ a {
     font-size: 3em;
 }
 
-#youtube-title {
-    color: white;
-    position: absolute;
-    top: 95%;
-    left: 70%;
-    font-size: medium;
-    background: blue;
-    border-radius: 5px;
-}
-
-@media screen and (max-width: 458px) {
-    #youtube-title {
-        color: white;
-        position: absolute;
-        top: 90%;
-        left: 60%;
-        font-size: small;
-        background: blue;
-        border-radius: 5px;
-        text-shadow: 1px 1px 1px;
-    }
-}
-
 li.result {
     display: inline-block;
     background: white;
@@ -103,4 +80,16 @@ li.result {
 
 ul.place-list>li {
     text-align: center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: black;
+}
+
+#youtube-title {
+  color: white;
 }
